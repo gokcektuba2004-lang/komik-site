@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KomikSite - Kayıt Ol</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header ve Navigasyon -->
+<header>
+    <div class="logo">
+        <h1>😂 KomikSite</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Anasayfa</a></li>
+            <li><a href="resimler.html">Komik Resimler</a></li>
+            <li><a href="videolar.html">Komik Videolar</a></li>
+            <li><a href="kayit.html">Kayıt Ol</a></li>
+            <li><a href="giris.html">Giriş Yap</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Ana içerik -->
+<main>
+    <section>
+        <h2>Kayıt Ol</h2>
+        <form id="kayitForm" onsubmit="return validateForm()">
+            <label for="isim">İsim:</label>
+            <input type="text" id="isim" name="isim" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="sifre">Şifre:</label>
+            <input type="password" id="sifre" name="sifre" required minlength="6">
+
+            <button type="submit">Kayıt Ol</button>
+        </form>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2026 KomikSite. Tüm hakları saklıdır.</p>
+</footer>
+
+<script>
+function validateForm() {
+    const isim = document.getElementById('isim').value.trim();
+    const sifre = document.getElementById('sifre').value;
+    if(isim.length < 3){
+        alert("İsim en az 3 karakter olmalı!");
+        return false;
+    }
+    if(sifre.length < 6){
+        alert("Şifre en az 6 karakter olmalı!");
+        return false;
+    }
+    alert("Kayıt başarılı!");
+    return true;
+}
+</script>
+
+</body>
+</html>
